@@ -24,7 +24,8 @@ while True:
             pygame.quit()
             sys.exit()
     
-
+    #color fill
+    screen.fill(GREEN)
     # 60 frame per second 
     pygame.display.update()
     clock.tick(60)
