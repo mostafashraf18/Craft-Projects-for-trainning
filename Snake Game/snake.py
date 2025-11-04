@@ -2,6 +2,10 @@ import pygame, sys
 
 pygame.init()
 
+#colors
+GREEN = (173, 204, 96)
+DARK_GREEN = (43, 51, 24)
+
 # displays surface ((Game window)) ** Top left coordinate
 screen = pygame.display.set_mode((750, 750))
 
@@ -14,6 +18,14 @@ clock = pygame.time.Clock()
 while True:
 
     for event in pygame.event.get():
+
+        #exit code
         if event.type == pygame.QUIT:
             pygame.quit()
             sys.exit()
+    
+
+    # 60 frame per second 
+    pygame.display.update()
+    clock.tick(60)
+
