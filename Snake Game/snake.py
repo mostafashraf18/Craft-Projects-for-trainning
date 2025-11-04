@@ -10,14 +10,14 @@ DARK_GREEN = (43, 51, 24)
 
 ## same as 750 pixels
 cell_size = 30
-number_of_cells = 254
+number_of_cells = 25
 
 class Food:
     def __init__(self):
        self.position = Vector2(5,6) 
     
     def draw(self):
-        
+
 
 # displays surface ((Game window)) ** Top left coordinate
 screen = pygame.display.set_mode((cell_size*number_of_cells, cell_size*number_of_cells))
