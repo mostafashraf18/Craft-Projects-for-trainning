@@ -34,7 +34,7 @@ class Snake:
     def draw(self):
         for segment in self.body:
             segment_rect = (segment.x*cell_size, segment.y*cell_size, cell_size, cell_size)
-            pygame.draw.rect(screen, DARK_GREEN, segment_rect)
+            pygame.draw.rect(screen, DARK_GREEN, segment_rect, 0, 7)
 
 
 # displays surface ((Game window)) ** Top left coordinate
