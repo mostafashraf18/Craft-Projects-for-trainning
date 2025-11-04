@@ -17,7 +17,7 @@ class Food:
        self.position = Vector2(5,6) 
     
     def draw(self):
-
+        pass
 
 # displays surface ((Game window)) ** Top left coordinate
 screen = pygame.display.set_mode((cell_size*number_of_cells, cell_size*number_of_cells))
