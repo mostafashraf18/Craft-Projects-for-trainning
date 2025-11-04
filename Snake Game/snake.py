@@ -17,7 +17,9 @@ class Food:
        self.position = Vector2(5,6) 
     
     def draw(self):
-        pass
+
+        food_rect = pygame.rect(self.position.x*cell_size, self.position.y * cell_size, cell_size, cell_size)
+        pygame.draw.rect(screen, DARK_GREEN, food_rect)
 
 # displays surface ((Game window)) ** Top left coordinate
 screen = pygame.display.set_mode((cell_size*number_of_cells, cell_size*number_of_cells))
@@ -25,8 +27,8 @@ screen = pygame.display.set_mode((cell_size*number_of_cells, cell_size*number_of
 pygame.display.set_caption("Retro Snake")
 
 clock = pygame.time.Clock()
-
-
+#object from class food 
+food = Food()
 # Game Loop 
 while True:
 
@@ -39,6 +41,9 @@ while True:
     
     #color fill
     screen.fill(GREEN)
+
+    #Drawing Food
+    food.draw()
     # 60 frame per second 
     pygame.display.update()
     clock.tick(60)
