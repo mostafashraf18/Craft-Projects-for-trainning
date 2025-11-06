@@ -51,7 +51,7 @@ class Snake:
 class Game:
     def __init__(self):
         self.snake = Snake()
-        self.food = Food()
+        self.food = Food(self.snake.body)
     
     def draw(self):
         self.food.draw()
@@ -63,7 +63,7 @@ class Game:
     
     def check_collision_with_food(self):
         if self.snake.body[0] == self.food.position:
-            self.food.position= self.food.generate_random_pos()
+            self.food.position= self.food.generate_random_pos(self.snake.body)
     
 # displays surface ((Game window)) ** Top left coordinate
 screen = pygame.display.set_mode((cell_size*number_of_cells, cell_size*number_of_cells))
@@ -76,9 +76,8 @@ clock = pygame.time.Clock()
 game = Game()
 
 #object from class food 
-food = Food()
 
-snake = Snake()
+#snake = Snake()
 
 food_surface = pygame.image.load("Graphics/food.png")
 
@@ -96,14 +95,18 @@ while True:
             sys.exit()
         
         if event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_UP and game.snake.direction != Vector2(0,1):
+            # Note: event.Key was corrected to event.key, and == to = for assignment
+            if event.key == pygame.K_UP and game.snake.direction != Vector2(0, 1):
                 game.snake.direction = Vector2(0, -1)
-            if event.Key == pygame.K_DOWN and game.snake.direction != Vector2(0,-1):
-                game.snake.direction == Vector2(0, 1)
-            if event.Key == pygame.K_LEFT and game.snake.direction != Vector2(1,0):
-                game.snake.direction == Vector2(-1, 0)
-            if event.Key == pygame.K_RIGHT and game.snake.direction != Vector2(-1,0):
-                game.snake.direction == Vector2(1, 0)
+                
+            if event.key == pygame.K_DOWN and game.snake.direction != Vector2(0, -1):
+                game.snake.direction = Vector2(0, 1)
+                
+            if event.key == pygame.K_LEFT and game.snake.direction != Vector2(1, 0):
+                game.snake.direction = Vector2(-1, 0)
+                
+            if event.key == pygame.K_RIGHT and game.snake.direction != Vector2(-1, 0):
+                game.snake.direction = Vector2(1, 0)
     
 
 
