@@ -21,10 +21,19 @@ class Food:
         food_rect = pygame.Rect(self.position.x * cell_size, self.position.y * cell_size, cell_size, cell_size)
         screen.blit(food_surface, food_rect)
     #generate random position to the food
-    def generate_random_pos(self):
+
+    def generate_random_cell(self):
+        x = random.randint(0, number_of_cells -1)
+        y = random.randint(0, number_of_cells -1)
+        return Vector2(x, y)
+            
+    def generate_random_pos(self,):
         x = random.randint(0, number_of_cells -1)
         y = random.randint(0, number_of_cells -1)
         position = Vector2(x, y)
+
+        while position in snake_body:
+
         return position    
 
 #snake class
@@ -41,12 +50,33 @@ class Snake:
         self.body = self.body[:-1]
         self.body.insert(0, self.body[0] + self.direction)
 
+class Game:
+    def __init__(self):
+        self.snake = Snake()
+        self.food = Food()
+    
+    def draw(self):
+        self.food.draw()
+        self.snake.draw()
+    
+    def update(self):
+        self.snake.update()
+        self.check_collision_with_food()
+    
+    def check_collision_with_food(self):
+        if self.snake.body[0] == self.food.position:
+            self.food.position= self.food.generate_random_pos()
+    
 # displays surface ((Game window)) ** Top left coordinate
 screen = pygame.display.set_mode((cell_size*number_of_cells, cell_size*number_of_cells))
 
 pygame.display.set_caption("Retro Snake")
 
 clock = pygame.time.Clock()
+
+
+game = Game()
+
 #object from class food 
 food = Food()
 
@@ -61,32 +91,27 @@ while True:
 
     for event in pygame.event.get():
         if event.type == SNAKE_UPDATE:
-            snake.update()
+            game.update()
         #exit code
         if event.type == pygame.QUIT:
             pygame.quit()
             sys.exit()
         
         if event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_UP and snake.direction != Vector2(0,1):
-                snake,direction = Vector2(0, -1)
-            if event.Key == pygame.K_DOWN and snake.direction != Vector2(0,-1):
-                snake.direction == Vector2(0, 1)
-            if event.Key == pygame.K_LEFT and snake.direction != Vector2(1,0):
-                snake.direction == Vector2(-1, 0)
-            if event.Key == pygame.K_RIGHT and snake.direction != Vector2(-1,0):
-                snake.direction == Vector2(1, 0)
+            if event.key == pygame.K_UP and game.snake.direction != Vector2(0,1):
+                game.snake.direction = Vector2(0, -1)
+            if event.Key == pygame.K_DOWN and game.snake.direction != Vector2(0,-1):
+                game.snake.direction == Vector2(0, 1)
+            if event.Key == pygame.K_LEFT and game.snake.direction != Vector2(1,0):
+                game.snake.direction == Vector2(-1, 0)
+            if event.Key == pygame.K_RIGHT and game.snake.direction != Vector2(-1,0):
+                game.snake.direction == Vector2(1, 0)
     
 
 
     #color fill
     screen.fill(GREEN)
-
-    #Drawing 
-    food.draw()
-    snake.draw()
-
-
+    game.draw()
     # 60 frame per second 
     pygame.display.update()
     clock.tick(60)
