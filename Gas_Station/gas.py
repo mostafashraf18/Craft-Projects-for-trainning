@@ -30,6 +30,8 @@ def get_gas_type():
          elif user_input == 80:
               price = much * OCT80
               print(f"Your Have to pay {price}")
+         elif user_input == 1:
+              
          else:
               print("that's not A type")
 
