@@ -13,6 +13,9 @@ def get_gas_type():
             95-Octane Gasoline: EGP 21.00 per liter
             92-Octane Gasoline: EGP 19.25 per liter
             80-Octane Gasoline: EGP 17.75 per liter
+            
+            1- Mantinace service
+            2- Washing Room
             """)
          user_input = int(input("what's the type of gas? please selcet number"))
          much = int(input("How much liters You need? please type a number"))
