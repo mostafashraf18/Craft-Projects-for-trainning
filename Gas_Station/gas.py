@@ -1,6 +1,6 @@
 import random
 import os
-import maintinance
+import mantinance
 
 
 OCT95 = 21
@@ -31,7 +31,7 @@ def get_gas_type():
               price = much * OCT80
               print(f"Your Have to pay {price}")
          elif user_input == 1:
-              
+              apply_Man() #add Feature
          else:
               print("that's not A type")
 
