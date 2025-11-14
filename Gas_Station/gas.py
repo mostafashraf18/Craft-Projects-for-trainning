@@ -33,7 +33,7 @@ def get_gas_type():
          elif user_input == 1:
               apply_Man() #add Feature
          else:
-              print("that's not A type")
+              print("that's not A type") #cprinting
 
     
     
