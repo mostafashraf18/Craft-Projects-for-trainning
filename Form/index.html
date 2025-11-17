@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Book Store </title>
+</head>
+<body>
+<form>
+    <h3>Cutomer Data</h3>
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" required minlength="4" maxlength="10" size="15" />
+
+    <label for="email">E-mail</label>
+    <input type="email" id="email" pattern="www.example.com" size="40" required />
+
+    <label for="date">Birth Date</label>
+    <input type="date" id="date" />
+
+    <label for="phone">Enter your phone number</label>
+    <input type="tel" id="phone" name="phone" required/>
+
+    <fieldset>
+        <legend>Select Sex</legend>
+
+        <div>
+            <input type="radio" id="male" name="sex" value="male"/>
+            <label for="male">Male</label>
+        </div>
+        <div>
+            <input type="radio" id="female" name="sex" value="female"/>
+            <label for="female">Female</label>
+        </div>
+        
+    </fieldset>
+<input type="submit" value="Send" />
+</form>
+</body>
+</html>
