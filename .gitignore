@@ -1,0 +1,65 @@
+# ─────────────────────────────────────────────
+# Ignore your YT_Downloads folder
+# ─────────────────────────────────────────────
+yt_Svript/YT_Downloads/
+
+# ─────────────────────────────────────────────
+# Python
+# ─────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+env/
+.venv/
+.env/
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+*.egg
+.eggs/
+pip-wheel-metadata/
+
+# Unit test / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# PyInstaller
+*.spec
+
+# Django / Flask stuff
+*.log
+instance/
+*.sqlite3
+
+# Cache
+.cache/
+
+# ─────────────────────────────────────────────
+# Editors
+# ─────────────────────────────────────────────
+# VSCode
+.vscode/
+
+# PyCharm
+.idea/
+
+# ─────────────────────────────────────────────
+# OS Files
+# ─────────────────────────────────────────────
+# Windows
+Thumbs.db
+desktop.ini
+
+# macOS
+.DS_Store
