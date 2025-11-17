@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+form {
+    @apply bg-white shadow-lg rounded-xl p-8 w-full max-w-lg space-y-6 border border-gray-200;
+}
