@@ -20,3 +20,12 @@ class Spaceship(pygame.sprite.Sprite):
         
     def update(self):
         self.get_user_input()
+        self.constrain_window()
+
+    def constrain_window(self):
+        if self.rect.right > self.screen_Width:
+            self.rect.right = self.screen_Width
+        
+        if self.rect.left < 0:
+            self.rect.left = 0
+        
