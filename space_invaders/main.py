@@ -21,8 +21,9 @@ spaceship_Group = pygame.sprite.GroupSingle()
 spaceship_Group.add(spaceship)
 
 laser = Laser((100, 100))
+laser2 = Laser((100, 200))
 laser_group = pygame.sprite.Group()
-laser_group.add(laser)
+laser_group.add(laser, laser2)
 
 while True:
     for event in pygame.event.get():
