@@ -24,6 +24,8 @@ while True:
         if event.type == pygame.QUIT:
             pygame.quit()
             sys.exit()
+    
+    spaceship_Group.update()
 
     screen.fill(GREY)
     spaceship_Group.draw(screen)
