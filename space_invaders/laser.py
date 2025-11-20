@@ -1,7 +1,7 @@
 import pygame
 
 
-class Lasser(pygame.sprite.Sprite):
+class Laser(pygame.sprite.Sprite):
     def __init__(self, position):
         super().__init__()
         self.image = pygame.Surface((4, 15))
