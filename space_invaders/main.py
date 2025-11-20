@@ -15,7 +15,7 @@ pygame.display.set_caption("Space Invaders")
 
 clock = pygame.time.Clock()
 
-spaceship = Spaceship()
+spaceship = Spaceship(SCREEN_WIDTH, SCREEN_HEIGHT)
 spaceship_Group = pygame.sprite.GroupSingle()
 spaceship_Group.add(spaceship)
 
